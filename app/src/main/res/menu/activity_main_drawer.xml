@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Test Type">
+        <menu>
+            <item
+                android:id="@+id/nav_voice_call"
+                android:checkable="true"
+                android:icon="@drawable/ic_menu_voice_call"
+                android:title="Voice Call" />
+            <item
+                android:id="@+id/nav_video_call"
+                android:checkable="true"
+                android:icon="@drawable/ic_menu_video_call"
+                android:title="Video Call" />
+            <item
+                android:id="@+id/nav_more"
+                android:checkable="true"
+                android:icon="@drawable/ic_menu_more"
+                android:title="More functions" />
+        </menu>
+    </item>
+    <item android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/nav_test_result"
+                android:checkable="true"
+                android:icon="@drawable/ic_menu_test_result"
+                android:title="Test Results" />
+            <item
+                android:id="@+id/nav_settings"
+                android:checkable="true"
+                android:icon="@drawable/ic_menu_settings"
+                android:title="Settings" />
+            <item
+                android:id="@+id/nav_about"
+                android:checkable="true"
+                android:icon="@drawable/ic_menu_help"
+                android:title="About" />
+        </menu>
+    </item>
+
+</menu>
