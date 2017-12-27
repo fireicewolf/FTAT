@@ -15,6 +15,7 @@ import com.dukeg.ftat.R;
  */
 
 public class VoiceCallSendFragment extends Fragment {
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View voice_call_send_view = inflater.inflate(R.layout.voicecall_send_fragment, container, false);
