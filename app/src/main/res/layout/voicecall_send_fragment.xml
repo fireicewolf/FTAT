@@ -3,106 +3,230 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="81dp">
 
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical"
-        android:stretchColumns="*"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TableRow
+        <TableLayout
+            android:id="@+id/tableLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:stretchColumns="*">
 
-            <TextView
-                android:id="@+id/scenario_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:text="Scenario"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <Spinner
-                android:id="@+id/scenario_spinner"
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:spinnerMode="dialog" />
+                android:layout_height="match_parent">
 
-        </TableRow>
+                <TextView
+                    android:id="@+id/scenario_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Scenario"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-        <TableRow
+                <Spinner
+                    android:id="@+id/scenario_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:entries="@array/test" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/destination_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="Destination"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/destination_editText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:ems="10"
+                    android:inputType="phone"
+                    android:textSize="14sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/init_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="Init(Sec)"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/init_editText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/try_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="Try(Sec)"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/try_editText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/connect_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="Connect(Sec)"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/connect_editText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/failed_try_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="Failed try(Sec)"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/failed_try_editText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/count_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="Count"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/count_editText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/destination_number_textview"
+            <Button
+                android:id="@+id/new_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Destination number"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_button_new"
+                android:text="New" />
 
-            <EditText
-                android:id="@+id/destination_number_editText"
+            <Button
+                android:id="@+id/play_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="phone"
-                android:textSize="14sp" />
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_button_play"
+                android:text="Play" />
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/init_time_textView"
+            <Button
+                android:id="@+id/pause_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Int time(Sec)"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_button_pause"
+                android:text="Pause" />
 
-            <EditText
-                android:id="@+id/init_time_editText"
+            <Button
+                android:id="@+id/stop_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="number"
-                android:textSize="14sp" />
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_button_stop"
+                android:text="stop" />
+        </LinearLayout>
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:id="@+id/try_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Try time(Sec)"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/try_editText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="number" />
-        </TableRow>
-    </TableLayout>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
