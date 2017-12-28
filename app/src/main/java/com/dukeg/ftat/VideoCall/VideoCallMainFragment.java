@@ -11,8 +11,6 @@ import android.view.ViewGroup;
 
 import com.dukeg.ftat.LogUtils.logger;
 import com.dukeg.ftat.R;
-import com.dukeg.ftat.VoiceCall.VoiceCallReceiveFragment;
-import com.dukeg.ftat.VoiceCall.VoiceCallSendFragment;
 
 /**
  * Created by Administrator on 2017/12/19.
@@ -32,6 +30,8 @@ public class VideoCallMainFragment extends Fragment {
         View video_call_view = inflater.inflate(R.layout.videocall_main_fragment,container,false);
 
         TabLayout video_call_tabLayout = video_call_view.findViewById(R.id.Video_Call_TabLayout);
+
+        setDefaultFragment();
 
         video_call_tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -77,10 +77,7 @@ public class VideoCallMainFragment extends Fragment {
             }
         });
 
-        setDefaultFragment();
-
-
-        return inflater.inflate(R.layout.videocall_main_fragment, container, false);
+        return video_call_view;
     }
 
     public void setDefaultFragment(){
