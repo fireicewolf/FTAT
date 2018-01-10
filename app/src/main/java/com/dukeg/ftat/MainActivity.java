@@ -20,6 +20,7 @@ import com.dukeg.ftat.LogUtils.logger;
 import com.dukeg.ftat.TestResults.TestResultsFragment;
 import com.dukeg.ftat.VideoCall.VideoCallMainFragment;
 import com.dukeg.ftat.VoiceCall.VoiceCallMainFragment;
+import com.dukeg.ftat.VoiceCall.VoiceCallService;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         setDefaultFragment();
+        startService(new Intent(this, VoiceCallService.class));
     }
 
     private void setDefaultFragment()
@@ -176,5 +178,11 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onDestroy() {
+        stopService(new Intent(this, VoiceCallService.class));
+        super.onDestroy();
     }
 }
