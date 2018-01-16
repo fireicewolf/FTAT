@@ -1,4 +1,4 @@
-package com.dukeg.ftat;
+package com.dukeg.ftat.UI.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -6,10 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.dukeg.ftat.LogUtils.logger;
+import com.dukeg.ftat.R;
+import com.dukeg.ftat.Utils.Log.logger;
 
 /**
- * Created by Administrator on 2017/12/19.
+ * Created by DukeG on 2017/12/19.
  * This is a fragment for settings selection.
  */
 

@@ -1,4 +1,4 @@
-package com.dukeg.ftat;
+package com.dukeg.ftat.UI.Activitys;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -16,22 +16,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.dukeg.ftat.LogUtils.logger;
-import com.dukeg.ftat.TestResults.TestResultsFragment;
-import com.dukeg.ftat.VideoCall.VideoCallMainFragment;
-import com.dukeg.ftat.VoiceCall.VoiceCallMainFragment;
-import com.dukeg.ftat.VoiceCall.VoiceCallService;
+import com.dukeg.ftat.R;
+import com.dukeg.ftat.UI.Fragments.AboutFragment;
+import com.dukeg.ftat.UI.Fragments.SettingsFragment;
+import com.dukeg.ftat.Utils.Log.logger;
+import com.dukeg.ftat.Services.CallService;
+import com.dukeg.ftat.TestResultsUtils.TestResultsFragment;
+import com.dukeg.ftat.UI.Fragments.Call.Video.VideoCallMainFragment;
+import com.dukeg.ftat.UI.Fragments.Call.Voice.VoiceCallMainFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private VoiceCallMainFragment voiceCallMainFragment;
-    private VideoCallMainFragment videoCallMainFragment;
-    private TestResultsFragment testResultsFragment;
-    private SettingsFragment settingsFragment;
-    private AboutFragment aboutFragment;
+    VoiceCallMainFragment voiceCallMainFragment;
+    VideoCallMainFragment videoCallMainFragment;
+    TestResultsFragment testResultsFragment;
+    SettingsFragment settingsFragment;
+    AboutFragment aboutFragment;
 
-    private Toolbar toolbar;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         setDefaultFragment();
-        startService(new Intent(this, VoiceCallService.class));
+        startService(new Intent(this, CallService.class));
     }
 
     private void setDefaultFragment()
@@ -143,6 +146,7 @@ public class MainActivity extends AppCompatActivity
                         startActivity(Intent.createChooser(intent, "Please choose your email apps"));
                     }
                 });
+                more_diag.setCancelable(false);
                 more_diag.show();
                 break;
             case R.id.nav_settings:
@@ -182,7 +186,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onDestroy() {
-        stopService(new Intent(this, VoiceCallService.class));
+        stopService(new Intent(this, CallService.class));
         super.onDestroy();
     }
 }

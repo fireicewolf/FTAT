@@ -1,4 +1,4 @@
-package com.dukeg.ftat.LogUtils;
+package com.dukeg.ftat.Utils.Log;
 
 import android.util.Log;
 
@@ -12,17 +12,17 @@ import com.dukeg.ftat.BuildConfig;
 public class logger {
     private static final boolean isDebug = BuildConfig.DEBUG;
 
-    private static final String TAG = "DukeG";
+    private static final String InformationTAG = "FTAT logger(Event)";
+
+    private static final String DebugTAG = "FTAT logger(Debug)";
 
     public static void d (String msg) {
         if (isDebug) {
-            Log.d(TAG, msg);
+            Log.d(DebugTAG, msg);
         }
     }
 
     public static void i (String msg) {
-        if (isDebug) {
-            Log.i(TAG, msg);
-        }
+        Log.i(InformationTAG, msg);
     }
 }
